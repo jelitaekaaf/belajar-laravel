@@ -2,7 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
-use App\Models\Barang;
+use App\Models\Pengguna;
+use App\Models\Telepon;
+use App\Models\Produk;
+use App\Models\Merk;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -76,7 +80,31 @@ Route:: get('myname/{nama?}', function ($a = "Jelita") {
 //});
 
 //menampilkan data barang dr database
-Route::get('/testmodel', function () {
-    $data = Barang::all();
-    return $data;
+Route::get('/produk', function () {
+    $produk = Produk::all();  //menampilkan semua data
+
+    return view('tampil_produk', compact('produk'));
+
+    // $post = Post::all(); //menampilkan semua data
+
+     //$siswas = Post::find(5); //menampilkan data berdasarkan id
+
+    //$post = Post::where('alamat', 'like', '%Cibaduyut%')->get(); // menampilkan berdasarkan title
+
+    // tambah data
+     //$siswas = new Siswa;
+     //$siswas->nama = "Cara Menjadi";
+     //$siswas->jk = "Laki laki";
+     //$siswas->alamat = "Cibaduyut";
+     //$siswas->agama = "Islam";
+     //$siswas->telepon = "0987656";
+     //$siswas->email = "a@gmail.com";
+     //$siswas->save(); 
+   
+});
+
+Route::get('/merk', function () {
+    $merk = Merk::all();  //menampilkan semua data
+
+    return view('tampil_merk', compact('merk'));
 });
