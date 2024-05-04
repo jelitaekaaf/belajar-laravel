@@ -2,10 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
-use App\Models\Pengguna;
 use App\Models\Telepon;
 use App\Models\Produk;
 use App\Models\Merk;
+use App\Models\Pembeli;
+use App\Models\Barang2;
+use App\Models\Transaksi;
 
 
 /*
@@ -107,4 +109,22 @@ Route::get('/merk', function () {
     $merk = Merk::all();  //menampilkan semua data
 
     return view('tampil_merk', compact('merk'));
+});
+
+Route::get('/pembeli', function () {
+    $pembeli = Pembeli::all();  //menampilkan semua data
+
+    return view('tampil_pembeli', compact('pembeli'));
+});
+
+Route::get('/barang2', function () {
+    $barang2 = Barang2::all();  //menampilkan semua data
+
+    return view('tampil_barang2', compact('barang2'));
+});
+
+Route::get('/transaksi', function () {
+    $transaksi = Transaksi::all();  //menampilkan semua data
+
+    return view('tampil_transaksi', compact('transaksi'));
 });
