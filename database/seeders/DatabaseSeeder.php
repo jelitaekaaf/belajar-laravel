@@ -13,16 +13,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(PostsTableSeeder::class);
+        //$this->call(PostsTableSeeder::class);
         //$this->call(BarangsTableSeeder::class);
         //$this->call(SiswasTableSeeder::class);
         //$this->call(PenggunasTableSeeder::class);  
         //$this->call(TeleponsTableSeeder::class);
-        //$this->call(MerksTableSeeder::class);
-        //$this->call(ProduksTableSeeder::class);
-        $this->call(PembelisTableSeeder::class);
-        $this->call(Barang2sTableSeeder::class);
-        $this->call(TransaksisTableSeeder::class);
+        $this->call(MerksTableSeeder::class);
+        $this->call(ProduksTableSeeder::class);
+        //$this->call(PembelisTableSeeder::class);
+        //$this->call(Barang2sTableSeeder::class);
+        //$this->call(TransaksisTableSeeder::class);
         // \App\Models\User::factory(10)->create();
     }
 }

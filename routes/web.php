@@ -8,6 +8,10 @@ use App\Models\Merk;
 use App\Models\Pembeli;
 use App\Models\Barang2;
 use App\Models\Transaksi;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\MerkController;
+
 
 
 /*
@@ -112,19 +116,53 @@ Route::get('/merk', function () {
 });
 
 Route::get('/pembeli', function () {
-    $pembeli = Pembeli::all();  //menampilkan semua data
+    $pembeli = Pembeli::all();  
 
     return view('tampil_pembeli', compact('pembeli'));
 });
 
 Route::get('/barang2', function () {
-    $barang2 = Barang2::all();  //menampilkan semua data
+    $barang2 = Barang2::all(); 
 
     return view('tampil_barang2', compact('barang2'));
 });
 
 Route::get('/transaksi', function () {
-    $transaksi = Transaksi::all();  //menampilkan semua data
+    $transaksi = Transaksi::all();  
 
     return view('tampil_transaksi', compact('transaksi'));
 });
+
+Route::get('/template', function () {
+  
+    return view('template');
+});
+
+Route::get('/template2', function () {
+  
+    return view('template2');
+});
+
+//Route::get('/template2', function () {
+  //  $produks = Produk::all();  
+    
+   // return view('template2', compact('produks'));
+//});
+
+//controller
+Route::get('produk', [ProdukController::class,'menampilkan']); // menampilkan semua data
+Route::get('produk/{id}', [ProdukController::class,'show']);    // menampilkan by id
+
+Route::get('post', [PostController::class,'menampilkan']);
+Route::get('post/{id}', [PostController::class,'show']);
+
+Route::get('merk', [MerkController::class,'menampilkan']);
+Route::get('merk/{id}', [MerkController::class,'show']);
+
+// login laravel
+Auth::routes();
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// crud brand
+use App\Http\Controllers\BrandController;
+Route::resource('brand', BrandController::class);   // sudah sepaket crud

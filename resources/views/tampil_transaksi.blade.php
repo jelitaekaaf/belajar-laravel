@@ -12,9 +12,10 @@
 
         <table border="2">
             <tr>
-                <th>ID</th>
-                <th>Id Barang</th>
-                <th>Id Pembeli</th>
+                <th>Id</th>
+                <th>Nama Pembeli</th>
+                <th>Jenis Kelamin</th>
+                <th>Nama Barang</th>
                 <th>Jumlah</th>
                 <th>Tanggal</th>
             </tr>
@@ -22,8 +23,9 @@
     @foreach ($transaksi as $data)
     <tr>
         <td>{{ $data->id }}</td>
-        <td>{{ $data->id_barang}}</td>
-        <td>{{ $data->id_pembeli}}</td>
+        <td>{{ $data->nama_pembeli}}</td>
+        <td>{{ $data->jenis_kelamin}}</td>
+        <td>{{ $data->Barang2->nama_barang}}</td>
         <td>{{ $data->jumlah}}</td>
         <td>{{ $data->tanggal}}</td>
     </tr>
