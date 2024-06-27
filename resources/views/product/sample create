@@ -1,0 +1,6 @@
+              
+                    <select class="form-control" name="id_brand">
+                        @foreach($brand as $data)
+                        <option value="{{$data->id}}" {{ $data->id == $product->id_brand ? 's elected' : ''}}>{{$data->name_brand}}</option>
+                        @endforeach
+                      </select>

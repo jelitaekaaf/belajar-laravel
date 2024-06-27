@@ -3,8 +3,34 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="keywords" content="bootstrap, bootstrap4" />
+
+		<!-- Bootstrap CSS -->
+		<link href="user/css/bootstrap.min.css" rel="stylesheet">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+		<link href="user/css/tiny-slider.css" rel="stylesheet">
+		<link href="user/css/style.css" rel="stylesheet">
+	
+        
 
         <title>Laravel</title>
+         <!-- Bootstrap Core CSS -->
+     <link href="{{asset('user/css/bootstrap.min.css')}}" rel="stylesheet">
+
+     <!-- MetisMenu CSS -->
+     <link href="{{asset('user/css/metisMenu.min.css')}}" rel="stylesheet">
+
+     <!-- Timeline CSS -->
+     <link href="{{asset('user/css/timeline.css')}}" rel="stylesheet">
+
+     <!-- Custom CSS -->
+     <link href="{{asset('user/css/startmin.css')}}" rel="stylesheet">
+
+     <!-- Morris Charts CSS -->
+     <link href="{{asset('user/css/morris.css')}}" rel="stylesheet">
+
+     <!-- Custom Fonts -->
+     <link href="{{asset('user/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -20,23 +46,38 @@
             }
         </style>
     </head>
+    
     <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
+        {{-- <div class="relative flex items-top justify-center min-h-screen bg-success-100 dark:bg-success-900 sm:items-center py-4 sm:pt-0">
+            @if (Route::has('login'))    
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
+                        <a href="{{ url('/wisata') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
                     @else
                         <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
 
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
                         @endif
+                        
+
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <a class="fa fa-sign-out fa-fw" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                    {{ __('') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
                     @endauth
                 </div>
-            @endif
+            @endif --}}
 
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
+            {{-- <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
                     <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto text-gray-700 sm:h-20">
                         <g clip-path="url(#clip0)" fill="#EF3B2D">
@@ -100,6 +141,7 @@
                         </div>
                     </div>
                 </div>
+                
 
                 <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
                     <div class="text-center text-sm text-gray-500 sm:text-left">
@@ -126,7 +168,155 @@
                         Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
                     </div>
                 </div>
+            </div> --}}
+            
+		<!-- Start Header/Navigation -->
+        
+       <div class="container-fluid">
+		<nav class="custom-navbar navbar navbar navbar-expand-md navbar-success-100 bg-success-900" arial-label="Furni navigation bar">
+
+			<div class="container">
+				<a class="navbar-brand text-white" href="index.html">WeTravel<span>.</span></a>
+
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarsFurni">
+					<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+						<li class="nav-item active">
+							<a class="nav-link" href="login">Login</a>
+						</li>
+						<li><a class="nav-link" href="contact.html">Contact us</a></li>
+					</ul>
+
+					
+				</div>
+			</div>
+				
+		</nav>
+		<!-- End Header/Navigation -->
+
+            
+       <!-- Start Hero Section -->
+       
+       	<div class="hero">
+				<div class="container">
+					<div class="row justify-content-between text-dark">
+						<div class="col-lg-5">
+							<div class="intro-excerpt">
+								<h1>Destinasi Wisata <span clsas="d-block">Populer</span></h1>
+								<p> Banyak sekali objek wisata di Indonesia yang sedang populer di Indonesia sebagai destinasi internasional. </p>
+                                <p>Dari Sabang sampai Merauke terdapat beraneka ragam destinasi seru yang wajib Sobat Pesona jelajah di waktu liburan yang akan datang.</p>
+								{{-- <p><a href="index.wisata" class="btn btn-secondary me-2">Selengkapnya</a></p> --}}
+							</div>
+						</div>
+						<div class="col-lg-7">
+							<div class="hero-img-wrap">
+								<img src="https://themewagon.github.io/furni/images/couch.png" class="img-fluid">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+        
+    </div>
+</div>
+		<!-- End Hero Section -->
+        	<!-- Start Product Section -->
+		<div class="product-section">
+			<div class="container">
+				<div class="row">
+
+					<!-- Start Column 1 -->
+					<div class="col-md-12 col-lg-3 mb-5 mb-lg-0">
+						<h2 class="mb-4 section-title">Terdapat Tiket Terbaru 2024</h2>
+						<p class="mb-4">Jenis-jenis tiket mana yang cocok buat Event-mu? </p>
+						<p><a href="shop.html" class="btn"></a></p>
+					</div> 
+					<!-- End Column 1 -->
+
+					<!-- Start Column 2 -->
+					<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
+						<a class="product-item" href="cart.html">
+							<img src="https://asset.kompas.com/crops/AHM-NNjGN9C-Jd_SYpzp73zLgFw=/0x0:750x500/750x500/data/photo/2022/01/15/61e23536b419a.jpg" class="img-fluid product-thumbnail">
+							<h3 class="product-title">Park 1 Weekend</h3>
+							<strong class="product-price">Rp. 110.000</strong>			
+						</a>
+					</div> 
+					<!-- End Column 2 -->
+
+					<!-- Start Column 3 -->
+					<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
+						<a class="product-item" href="cart.html">
+							<img src="https://assets.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/2023/04/07/22012021110634-4122733520.jpg" class="img-fluid product-thumbnail">
+							<h3 class="product-title">Pangandaran</h3>
+							<strong class="product-price">Rp. 87.000</strong>		
+						</a>
+					</div>
+					<!-- End Column 3 -->
+
+					<!-- Start Column 4 -->
+					<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
+						<a class="product-item" href="cart.html">
+							<img src="https://setapaklangkah.com/wp-content/uploads/2022/07/selecta.jpeg" class="img-fluid product-thumbnail">
+							<h3 class="product-title">Taman Selectra</h3>
+							<strong class="product-price">Rp. 48.000</strong>
+						</a>
+					</div>
+					<!-- End Column 4 -->
+				</div>
+			</div>
+		</div>
+        
+		<!-- End Product Section -->
+     
+
+
+       
+
+	<!-- Start Footer Section -->
+    <footer class="footer-section">
+        <div class="container relative">
+          
+            <div class="row g-5 mb-5">
+                <div class="col-lg-4">
+
+                    
+                </div>   
+                    </div>
+                </div>
+
             </div>
+
+            <div class="border-top copyright">
+                <div class="row pt-4">
+                    <div class="col-lg-6">
+                        <p class="mb-2 text-center text-lg-start">Copyright by Jelita &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash;  <a href="https://untree.co">Untree.co</a> Distributed By <a hreff="https://themewagon.com">ThemeWagon</a>  <!-- License information: https://untree.co/license/ -->
+        </p>
+                    </div>
+                    <ul class="list-unstyled custom-social">
+                        
+                        <li><a href="https://www.instagram.com/"><span class="fa fa-brands fa-instagram"></span></a></li>
+                        <li><a href="https://www.whatsapp.com/"><span class="fa fa-brands fa-whatsapp"></span></a></li>
+                    </ul>
+                    <div class="col-lg-6 text-center text-lg-end">
+                        
+                    </div>
+
+                </div>
+            </div>
+
         </div>
+    </footer>
+    <!-- End Footer Section -->	
+
+            
+            
+        </div>
+        <script src="js/bootstrap.bundle.min.js"></script>
+		<script src="js/tiny-slider.js"></script>
+		<script src="js/custom.js"></script>
     </body>
+    
 </html>
